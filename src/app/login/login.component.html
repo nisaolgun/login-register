@@ -1,0 +1,40 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </head>
+  
+  <body>
+    <div class="container">
+      <form (submit)="onSubmit()" class="login-form">
+        <div class="logo">
+          <img class="images1" src="../../assets/images/Logo.png" alt="Logo">
+        </div>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Email or Phone</mat-label>
+          <input matInput placeholder="Email or Phone" [(ngModel)]="emailOrPhoneNumber" name="Email or Phone" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" [(ngModel)]="password" name="password"
+            [type]="hide ? 'password' : 'text'" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" style="background-color: #0099cc;"
+          class="full-width">Login</button>
+        <div class="register-link">
+          <p>Don't have an account?<a style="color: blue;margin-left: 0.5rem;" href="/register">Sign Up</a><a
+              style="color: red;margin-left: 1rem;" href="/register">Forgot Password</a></p>
+        </div>
+        <div class="middle">
+          <a class="btn instagram" href="#">
+            <i class="fab fa-instagram fa-gradient-insta"></i>
+          </a>
+          <a class="btn youtube" href="#">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </form>
+    </div>
+  </body>

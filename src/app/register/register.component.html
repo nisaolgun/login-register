@@ -1,0 +1,67 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()" class="register-form">
+      <img class="images1" src="../../assets/images/Logo.png" alt="Logo">
+      <div class="input-container">
+        <mat-form-field class="full-width">
+          <mat-label>Company Name</mat-label>
+          <input matInput placeholder="Company Name" [(ngModel)]="companyname" name="companyname" required>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Name" [(ngModel)]="name" name="name" required>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Surname</mat-label>
+          <input matInput placeholder="Surname" [(ngModel)]="surname" name="surname" required>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" [(ngModel)]="email" name="email" type="email" required>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Phone Number</mat-label>
+          <input matInput placeholder="(000) 000-0000" [(ngModel)]="phonenumber" name="phonenumber" type="tel">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Country</mat-label>
+          <mat-select placeholder="Country" [(ngModel)]="country" name="country" required>
+            <mat-option value="Turkey">
+              <img src="http://www.gencgrafiker.com/wp-content/uploads/2013/09/turkiye-bayrak-ikon.png" alt="Turkey Flag" class="flag-icon"> Turkey
+            </mat-option>
+            <mat-option value="Germany">
+              <img src="https://www.gencgrafiker.com/wp-content/uploads/2013/09/almanya-bayrak-ikon.png" alt="Germany Flag" class="flag-icon"> Germany
+            </mat-option>
+            <mat-option value="USA">
+              <img src="http://www.gencgrafiker.com/wp-content/uploads/2013/09/ingiltere-bayrak-ikon.png" alt="USA Flag" class="flag-icon"> USA
+            </mat-option>
+            <mat-option value="Egypt">
+              <img src="https://www.gencgrafiker.com/wp-content/uploads/2013/09/misir-bayrak-ikon.png" alt="Egypt Flag" class="flag-icon"> Egypt
+            </mat-option>
+            <mat-option value="Brazil">
+              <img src="https://www.gencgrafiker.com/wp-content/uploads/2013/09/brezilya-bayrak-ikon.png" alt="Brazil Flag" class="flag-icon"> Brazil
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" [(ngModel)]="password" name="password" type="password" required>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput placeholder="Confirm Password" [(ngModel)]="confirmPassword" name="confirmPassword" type="password" required>
+        </mat-form-field>
+        <div *ngIf="passwordMismatchError" style="color: red;">Passwords do not match!</div>
+        <mat-form-field class="full-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput placeholder="Description" [(ngModel)]="description" name="description" required></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" class="full-width">Sign Up</button>
+        <div *ngIf="registrationSuccess" style="color: green; text-align: center;">Registration successful!</div>
+        <div *ngIf="registrationError" style="color: red; text-align: center;">{{ registrationError }}</div>
+        <div class="login-link">
+          <p style="text-align: center; margin-top: 1rem;">Already have an account?<a href="/login"> Login</a></p>
+        </div>
+      </div>
+    </form>
+  </div>
+  
